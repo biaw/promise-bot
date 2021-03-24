@@ -6,11 +6,9 @@ module.exports = async client => {
   client.ws.on("INTERACTION_CREATE", async interaction => {
     if (!interaction.guild_id) return client.api.interactions(interaction.id, interaction.token).callback.post({ data: { type: 4, data: { content: "❌ Commands only works in guilds." } } });
 
-    const
-      commandFile = require(`../commands/slash/${interaction.data.name}.js`),
-      callback = client.api.interactions(interaction.id, interaction.token).callback;
+    const commandFile = require(`../commands/slash/${interaction.data.name}.js`);
     
-    return commandFile.run(data => callback.post({ data }), { member: interaction.member, client, guild: interaction.guild_id }, getSlashArgs(interaction.data.options || []), callback);
+    return commandFile.run(data => client.api.interactions(interaction.id, interaction.token).callback.post({ data }), { member: interaction.member, client, guild: interaction.guild_id }, getSlashArgs(interaction.data.options || []), interaction);
   });
 };
 

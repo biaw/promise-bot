@@ -36,7 +36,7 @@ module.exports = {
 
 const { testareas } = require("../../database"), { getPermissionLevel } = require("../../constants"), config = require("../../../config.json");
 
-module.exports.run = async (send, { member, client, guild }, { create, list, remove }) => {
+module.exports.run = async (send, { member, client, guild }, { create, list, remove }, interaction) => {
   const mainMember = client.guilds.cache.get(config.mainGuild).members.cache.get(member.user.id);
   if (!mainMember) return;
 
@@ -46,6 +46,7 @@ module.exports.run = async (send, { member, client, guild }, { create, list, rem
 
   if (create) {
     if (client.guilds.cache.size == 10) return send({ type: 4, data: { content: "❌ I can't create more guilds as a bot user, please delete unused test areas first." }});
+    await send({ type: 5 });
 
     const newGuild = await client.guilds.create(create.name, {
       channels: [
@@ -96,7 +97,7 @@ module.exports.run = async (send, { member, client, guild }, { create, list, rem
       deletable: true
     });
 
-    return send({ type: 4, data: { content: `✅ Successfully created a test area for you. Here's an invite: discord.gg/${newInvite.code}` }});
+    return client.api.webhooks(client.user.id, interaction.token).messages['@original'].patch({ data: { content: `✅ Successfully created a test area for you. Here's an invite: https://discord.gg/${newInvite.code}/` }});
   } else if (list) {
     const areas = await testareas.get(), areaList = Object.keys(areas).filter(gid => client.guilds.cache.get(gid));
     if (!areaList.length) return send({ type: 4, data: { content: "❌ There's not any test areas." }});
