@@ -41,8 +41,8 @@ module.exports = client => {
       today[userid] = today[userid].filter(ts => ts > Date.now());
       const member = guild.members.cache.get(userid);
       if (member) {
-        if (today[userid].length >= 6 && !member.roles.cache.has("496237757216325633")) member.roles.add("496237757216325633", "Vote");
-        if (today[userid].length < 6 && member.roles.cache.has("496237757216325633")) member.roles.remove("496237757216325633", "Vote");
+        if (today[userid].length >= 6 && !member.roles.cache.has("510555278580645892")) member.roles.add("510555278580645892", "Vote");
+        if (today[userid].length < 6 && member.roles.cache.has("510555278580645892")) member.roles.remove("510555278580645892", "Vote");
         if (today[userid].length >= 1 && !member.roles.cache.has("496237757216325633")) member.roles.add("496237757216325633", "Vote");
         if (today[userid].length < 1 && member.roles.cache.has("496237757216325633")) member.roles.remove("496237757216325633", "Vote");
       }
