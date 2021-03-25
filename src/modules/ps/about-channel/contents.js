@@ -58,7 +58,47 @@ module.exports = [
         }
       ]
     },
-    navigation: "Server Rules"
+    navigation: "Server rules"
+  },
+  "images/role_descriptions.png",
+  {
+    embed: {
+      fields: [
+        {
+          name: "Staff Roles",
+          value: [
+            "• <@&457839018198171648> is for Promise only.",
+            "• <@&449577708100517888> is for Administrators. They hire new Moderators, manage channels, manage roles and more.",
+            "• <@&449577579611947009> is for the staff members of the server. They help out with support, and they also make the server a safe place to be on. If you feel someone is breaking any rules, feel free to mention one of the moderators.",
+          ].map(line => `${line}\n`).join("\n") + `**${zwsp}**`
+        },
+        {
+          name: "Supporter Roles",
+          value: [
+            "• <@&545584317481353228> is for our Sponsor Patrons, donating $5/month or more.",
+            "• <@&510935895885611010> is for our Premium Patrons, donating $1/month or more.",
+            "• <@&638989701730140161> is for our Nitro boosters on the server.",
+            "• <@&496237757216325633> is for those who have voted on more than one voting site on our bots.",
+            "• <@&510555278580645892> is the same as above but for six voting sites instead of one.",
+            "• If you have one of these roles, you get the <@&662049690438598666>-role that is hoisted."
+          ].map(line => `${line}\n`).join("\n") + `**${zwsp}**`
+        },
+        {
+          name: "Miscellaneous Roles",
+          value: [
+            "• <@&759329966042906634> is for nice people who help out in support channels, but doesn't really necessarily want to become a part of the team themselves.",
+            "• <@&463329086828314624> is for big community owners. No, you cannot ask for this role, we will give it to you if we feel like you deserve it. There's no requirements as this is a per-server evaluation.",
+            "• <@&463332478216699924> is for our graphic designers.",
+            "• <@&619850871701897216> is for our code reviewers.",
+            "• <@&514105335557128241> is for the last counter in <#467378104172806164>.",
+            "• <@&449984692314177556> is for people that have gotten auto-muted by Auttaja, or manually muted by a staff member. They will only get access to a timeout channel where they can rethink their life choices.",
+            "• <@&603800927874318357> is to avoid Auttaja auto-moderation. Most staff have this role.",
+            "• <@&647484663736303626> is for bots on the server. Most bots also have their own coloured role."
+          ].map(line => `${line}\n`).join("\n")
+        }
+      ]
+    },
+    navigation: "Role descriptions"
   },
   "images/our_projects.png",
   {
@@ -158,6 +198,6 @@ module.exports = [
         }
       ]
     },
-    navigation: "Frequently Asked Questions"
+    navigation: "Frequently asked questions"
   }
 ]
