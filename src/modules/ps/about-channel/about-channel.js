@@ -62,7 +62,7 @@ module.exports = client => {
         await message.channel.overwritePermissions([
           {
             id: message.guild.roles.everyone,
-            allow: [ "VIEW_CHANNEL" ]
+            deny: [ "ADD_REACTIONS", "SEND_MESSAGES", "MANAGE_MESSAGES" ]
           }
         ])
       } catch(e) {/* something went wrong */}
