@@ -6,7 +6,7 @@ const
   ws = "🌐",
   dc = "📋",
   sp = "💫",
-  iv = "➕",
+  iv = "<:invite:824623565269106739>",
   zwsp = "​";  // zero width space
 
 module.exports = [
@@ -67,7 +67,7 @@ module.exports = [
         {
           name: "Countr",
           value: [
-            "***A counting bot that can manage a counting channel in your guild***",
+            "**__A counting bot that can manage a counting channel in your guild__**",
             "",
             `> ${ws} Website: [countr.xyz](https://countr.xyz)`,
             `> ${dc} Documentation: [docs.countr.xyz](https://docs.countr.xyz)`,
@@ -84,7 +84,7 @@ module.exports = [
         {
           name: "The Impostor",
           value: [
-            "***A simple bot to host Among us-games***",
+            "**__A simple bot to host Among us-games__**",
             "",
             `> ${gh} GitHub: [biaw/the-impostor](https://github.com/biaw/the-impostor)`,
             `> ${iv} Invite: \`im!invite\``
@@ -94,7 +94,7 @@ module.exports = [
         {
           name: "YTDL Discord Bot",
           value: [
-            "***An example of how to use the ytdl-core package with discord.js***",
+            "**__An example of how to use the ytdl-core package with discord.js__**",
             "",
             `> ${gh} GitHub: [promise/ytdl-discord-bot](https://github.com/promise/ytdl-discord-bot)`,
           ],
@@ -107,7 +107,7 @@ module.exports = [
         {
           name: "OutageDiscord",
           value: [
-            "***Keeping you posted on Discord's outages***",
+            "**__Keeping you posted on Discord's outages__**",
             "",
             `> ${tw} Twitter: [@OutageDiscord](https://twitter.com/OutageDiscord)`,
           ],
@@ -116,7 +116,7 @@ module.exports = [
         {
           name: "Blurple Hammer",
           value: [
-            "***An advanced moderation bot for [Project Blurple](https://projectblurple.com)***",
+            "**__An advanced moderation bot for [Project Blurple](https://projectblurple.com)__**",
             "",
             `> ${gh} GitHub: [project-blurple/blurple-hammer](https://github.com/project-blurple/blurple-hammer)`,
           ],

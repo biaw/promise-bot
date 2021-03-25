@@ -10,6 +10,14 @@ module.exports = client => {
       message.content == "refresh"
     ) {
       try {
+        await message.channel.overwritePermissions([
+          {
+            id: message.guild.roles.everyone.id,
+            deny: [ "VIEW_CHANNEL" ]
+          }
+        ])
+      } catch(e) {/* something went wrong */}
+      try {
         await message.channel.bulkDelete(50);
         await new Promise(resolve => setTimeout(resolve, 1000));
       } catch(e) {/* something went wrong */}
@@ -36,7 +44,7 @@ module.exports = client => {
         }
         first = false;
       }
-      await message.channel.send("** \n **", {
+      await message.channel.send("** **", {
         files: [
           {
             attachment: require("path").join(__dirname, "images/navigation.png"),
@@ -50,6 +58,14 @@ module.exports = client => {
           color: 0x00BF9C
         }
       })
+      try {
+        await message.channel.overwritePermissions([
+          {
+            id: message.guild.roles.everyone,
+            allow: [ "VIEW_CHANNEL" ]
+          }
+        ])
+      } catch(e) {/* something went wrong */}
     }
   })
   client.on("messageReactionAdd", async (reaction, user) => {
