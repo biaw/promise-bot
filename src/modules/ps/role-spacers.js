@@ -1,5 +1,5 @@
 // SPACER NAME: ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// SPACER COLOR: 2F3136
+// SPACER COLOR: 18191c
 // Any role that has the name will work, but the color makes it only show as a white line.
 
 const spacerName = "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", processing = new Set();
